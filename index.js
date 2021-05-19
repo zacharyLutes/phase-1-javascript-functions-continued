@@ -7,15 +7,12 @@ const mondayWork = function(work="go to the office") {
 }
 
 
-const wrapAdjective = function(p='*') {
-    const adjective = function(parameter='special') {
-        return `You are ${p}${parameter}${p}`;
+const wrapAdjective = function (decorator='*') {
+   
+    function decorate(adjective='special') {
+        const line = `You are ${decorator}${adjective}${decorator}!`
+        return line
     }
-    if (p === '*') {
-        return `You are ${p}a hard worker${p}!`;
-    } else if (p === '||') {
-        return `You are ${p}a dedicated programmer${p}!`;
-    }
-    return adjective;
-    
-}   
+    const string = decorate
+    return string;
+}
